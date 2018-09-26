@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>MegaMarket Loyalty Cards</h1> 
-    <MainContainer />
+      <MainContainer />
   </div>
 </template>
 
@@ -16,10 +16,6 @@
     } 
   }
 </script>
-
-
-//styles for app
-
 <style> 
   * {
     box-sizing: border-box;

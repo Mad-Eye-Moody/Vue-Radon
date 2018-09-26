@@ -1,22 +1,25 @@
 <template> 
-    <div id="totals-display">
-        <label id='totalcards'>Total Cards:</label>
-        <label id='totalmarkets'>Total Markets:</label> 
-     </div> 
+     <div id="totals-display">
+        <span id='totalcards'>Total Cards: 
+          {{ totalCards }}
+        </span>
+        <span id='totalmarkets'>Total Markets:
+          {{ totalMarkets }}  
+        </span> 
+     </div>
 </template> 
 
 <script>
-  import TotalsDisplay from './TotalsDisplay.vue';
+import MainContainer from './MainContainer.vue'
+
   export default {
     name: 'TotalsDisplay',
-      props: ['totalcards', 'totalmarkets'],
-      data () {
-        return {
-          totalsdisplay: 0,
-          totalCards: 0,
-        }
-      }
-    }
+      props: ['totalCards', 'totalMarkets'],
+   }
+   //removed, not sure if I need....:(.
+    //components: { 
+    //  MainContainer
+    // }
 </script> 
 
 <style>
@@ -26,8 +29,10 @@
     margin: 15px auto;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, .2);
   }
-  label {
+  #totalcards {
     display: flex;
-    margin: 9px;
+    margin-bottom: 8px;
   }
+
 </style> 
+

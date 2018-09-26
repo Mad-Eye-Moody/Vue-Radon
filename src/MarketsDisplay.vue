@@ -6,10 +6,9 @@
 </template>
 
 <script>
-    import TotalsDisplay from './TotalsDisplay.vue';
     export default {
       name: 'MarketsDisplay',
-
+      props:['totalcards', 'totalsdisplay'],
     }
 </script> 
 

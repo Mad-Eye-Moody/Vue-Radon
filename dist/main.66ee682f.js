@@ -7654,16 +7654,16 @@ if (module.hot) {
   })();
 }
 },{"vueify/lib/insert-css":"node_modules/vueify/lib/insert-css.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"src/TotalsDisplay.vue":[function(require,module,exports) {
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("#totals-display {\n  padding: 10px;\n  width:95%;\n  margin: 15px auto;\n  box-shadow: 5px 5px 15px rgba(0, 0, 0, .2);\n}\nlabel {\n  display: flex;\n  margin: 9px;\n}");(function () {
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("#totals-display {\n  padding: 10px;\n  width:95%;\n  margin: 15px auto;\n  box-shadow: 5px 5px 15px rgba(0, 0, 0, .2);\n}\n#totalcards {\n  display: flex;\n  margin-bottom: 8px;\n}");(function () {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
 
-  var _TotalsDisplay = require('./TotalsDisplay.vue');
+  var _MainContainer = require('./MainContainer.vue');
 
-  var _TotalsDisplay2 = _interopRequireDefault(_TotalsDisplay);
+  var _MainContainer2 = _interopRequireDefault(_MainContainer);
 
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -7671,13 +7671,7 @@ var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("#totals-
 
   exports.default = {
     name: 'TotalsDisplay',
-    props: ['totalcards', 'totalmarkets'],
-    data: function data() {
-      return {
-        totalsdisplay: 0,
-        totalCards: 0
-      };
-    }
+    props: ['totalCards', 'totalMarkets']
   };
 })();
 if (module.exports.__esModule) module.exports = module.exports.default;
@@ -7686,11 +7680,9 @@ if (__vue__options__.functional) {
   console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.");
 }
 __vue__options__.render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _vm._m(0);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { attrs: { "id": "totals-display" } }, [_c('span', { attrs: { "id": "totalcards" } }, [_vm._v("Total Cards: \n     " + _vm._s(_vm.totalCards) + "\n   ")]), _vm._v(" "), _c('span', { attrs: { "id": "totalmarkets" } }, [_vm._v("Total Markets:\n     " + _vm._s(_vm.totalMarkets) + "  \n   ")])]);
 };
-__vue__options__.staticRenderFns = [function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { attrs: { "id": "totals-display" } }, [_c('label', { attrs: { "id": "totalcards" } }, [_vm._v("Total Cards:")]), _vm._v(" "), _c('label', { attrs: { "id": "totalmarkets" } }, [_vm._v("Total Markets:")])]);
-}];
+__vue__options__.staticRenderFns = [];
 if (module.hot) {
   (function () {
     var hotAPI = require("vue-hot-reload-api");
@@ -7705,25 +7697,16 @@ if (module.hot) {
     }
   })();
 }
-},{"vueify/lib/insert-css":"node_modules/vueify/lib/insert-css.js","./TotalsDisplay.vue":"src/TotalsDisplay.vue","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"src/MarketsDisplay.vue":[function(require,module,exports) {
+},{"vueify/lib/insert-css":"node_modules/vueify/lib/insert-css.js","./MainContainer.vue":"src/MainContainer.vue","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"src/MarketsDisplay.vue":[function(require,module,exports) {
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("#markets-display {\n    display: flex;\n    overflow: auto;\n    padding-top: 10px;\n}\ninput {\n    height: 20px;\n}\nbutton {\n    position: relative;\n    width: 10%;\n    height: 5;\n    margin-left: 5px;\n    font-size: 9px;\n}");(function () {
     'use strict';
 
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-
-    var _TotalsDisplay = require('./TotalsDisplay.vue');
-
-    var _TotalsDisplay2 = _interopRequireDefault(_TotalsDisplay);
-
-    function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : { default: obj };
-    }
-
     exports.default = {
-        name: 'MarketsDisplay'
-
+        name: 'MarketsDisplay',
+        props: ['totalcards', 'totalsdisplay']
     };
 })();
 if (module.exports.__esModule) module.exports = module.exports.default;
@@ -7747,17 +7730,21 @@ if (module.hot) {
         if (!module.hot.data) {
             hotAPI.createRecord("data-v-153b0ade", __vue__options__);
         } else {
-            hotAPI.reload("data-v-153b0ade", __vue__options__);
+            hotAPI.rerender("data-v-153b0ade", __vue__options__);
         }
     })();
 }
-},{"vueify/lib/insert-css":"node_modules/vueify/lib/insert-css.js","./TotalsDisplay.vue":"src/TotalsDisplay.vue","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"src/MainContainer.vue":[function(require,module,exports) {
+},{"vueify/lib/insert-css":"node_modules/vueify/lib/insert-css.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"src/MainContainer.vue":[function(require,module,exports) {
 ;(function () {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
+
+  var _TotalsDisplay = require('./TotalsDisplay.vue');
+
+  var _TotalsDisplay2 = _interopRequireDefault(_TotalsDisplay);
 
   var _MarketsDisplay = require('./MarketsDisplay.vue');
 
@@ -7769,7 +7756,18 @@ if (module.hot) {
 
   exports.default = {
     name: 'MainContainer',
-    components: { TotalsDisplay: TotalsDisplay, MarketsDisplay: _MarketsDisplay2.default }
+    components: {
+      TotalsDisplay: _TotalsDisplay2.default,
+      MarketsDisplay: _MarketsDisplay2.default
+    },
+    data: function data() {
+      return {
+        marketId: 0,
+        totalCards: 0,
+        totalMarkets: 0,
+        percentOfTotalCards: 0
+      };
+    }
   };
 })();
 if (module.exports.__esModule) module.exports = module.exports.default;
@@ -7778,7 +7776,7 @@ if (__vue__options__.functional) {
   console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.");
 }
 __vue__options__.render = function render() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { attrs: { "id": "main-container" } }, [_c('TotalsDisplay', { attrs: { "totalcards": _vm.totalcards } }), _vm._v(" "), _c('MarketsDisplay')], 1);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { attrs: { "id": "main-container" } }, [_c('TotalsDisplay', { attrs: { "totalCards": _vm.totalCards, "totalMarkets": _vm.totalMarkets } }), _vm._v(" "), _c('MarketsDisplay')], 1);
 };
 __vue__options__.staticRenderFns = [];
 if (module.hot) {
@@ -7794,7 +7792,7 @@ if (module.hot) {
     }
   })();
 }
-},{"./MarketsDisplay.vue":"src/MarketsDisplay.vue","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"src/App.vue":[function(require,module,exports) {
+},{"./TotalsDisplay.vue":"src/TotalsDisplay.vue","./MarketsDisplay.vue":"src/MarketsDisplay.vue","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"src/App.vue":[function(require,module,exports) {
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("* {\n  box-sizing: border-box;\n  font-family: 'Ubuntu Light', 'Century Gothic', sans-serif;\n  margin: 0;\n  padding: 0;\n  color: #393939;\n  background-color: #FFF;\n}\n#app {\n  max-width: 600px;\n  margin: 0 auto;\n  padding: 10px;\n  box-shadow: 10px 15px 39px rgba(0, 0, 0, .2);\n  border-radius: 5px;\n}\n#app h1 {\n  word-spacing: 10px;\n  letter-spacing: 6px;\n}");(function () {
   "use strict";
 
@@ -7888,7 +7886,7 @@ function Module(config) {
 module.bundle.Module = Module;
 
 if (!module.bundle.parent && typeof WebSocket !== 'undefined') {
-  var ws = new WebSocket('ws://localhost:59867/');
+  var ws = new WebSocket('ws://localhost:62022/');
   ws.onmessage = function(event) {
     var data = JSON.parse(event.data);
 
