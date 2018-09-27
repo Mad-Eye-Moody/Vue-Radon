@@ -1,15 +1,35 @@
 <template>
     <div id="markets-display"> 
-        <input>
-        <button v-on:click="totalCards += 1">Add Location</button>
+        <input type="text" id="market" v-model="newMarket.market">
+        <button @click="addLocation" >Add Location</button>
+        <MarketCardComponent/>
     </div> 
 </template>
 
 <script>
+    import TotalsDisplay from './TotalsDisplay.vue';
+    import MarketCard from './MarketCardComponent.vue';
+  
     export default {
       name: 'MarketsDisplay',
-      props:['totalcards', 'totalsdisplay'],
-    }
+      props:['totalCards', 'totalMarkets'],
+      components: {
+          'app-marketcard': MarketCardComponent, 
+      },
+      data: function(){
+          return {
+            newMarket: {
+                market: ' ' //need to render this on the MarketCardComponet
+            }    
+          }
+      },
+      methods: { 
+        addLocation:function() {
+          this.$emit('marketAdded')
+          console.log(this.newMarket.market)
+        },
+      }
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 </script> 
 
 <style>

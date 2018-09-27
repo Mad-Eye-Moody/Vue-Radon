@@ -1,12 +1,19 @@
 <template>
     <ul id="market-card">
+      <li>MarketId: {{ marketId }}</li>
+      <li>Location: {{ location }}</li>
+      <li>Total Cards: {{ totalCards }}</li>
+      <li>% Of Totals: {{ percentOfTotalCards }}</li>
     </ul>
 </template>
 
 
 <script>
+  import MarketsDisplay from './MarketsDisplay.vue'; 
+  
   export default {
     name: 'MarketCard',
+    props: ['marketId', 'location', 'totalCards', 'percentOfTotalCards']
   }
 </script>
 
