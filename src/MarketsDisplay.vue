@@ -2,20 +2,15 @@
     <div id="markets-display"> 
         <input type="text" id="market" v-model="newMarket.market">
         <button @click="addLocation" >Add Location</button>
-        <MarketCardComponent/>
     </div> 
 </template>
 
 <script>
     import TotalsDisplay from './TotalsDisplay.vue';
-    import MarketCard from './MarketCardComponent.vue';
-  
+    
     export default {
       name: 'MarketsDisplay',
       props:['totalCards', 'totalMarkets'],
-      components: {
-          'app-marketcard': MarketCardComponent, 
-      },
       data: function(){
           return {
             newMarket: {

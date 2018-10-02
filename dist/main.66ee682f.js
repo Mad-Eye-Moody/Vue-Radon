@@ -7675,10 +7675,6 @@ var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("#markets
 
     var _TotalsDisplay2 = _interopRequireDefault(_TotalsDisplay);
 
-    var _MarketCardComponent = require('./MarketCardComponent.vue');
-
-    var _MarketCardComponent2 = _interopRequireDefault(_MarketCardComponent);
-
     function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
     }
@@ -7686,9 +7682,6 @@ var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("#markets
     exports.default = {
         name: 'MarketsDisplay',
         props: ['totalCards', 'totalMarkets'],
-        components: {
-            'app-marketcard': MarketCardComponent
-        },
         data: function data() {
             return {
                 newMarket: {
@@ -7713,7 +7706,7 @@ __vue__options__.render = function render() {
                 if ($event.target.composing) {
                     return;
                 }_vm.$set(_vm.newMarket, "market", $event.target.value);
-            } } }), _vm._v(" "), _c('button', { on: { "click": _vm.addLocation } }, [_vm._v("Add Location")]), _vm._v(" "), _c('MarketCardComponent')], 1);
+            } } }), _vm._v(" "), _c('button', { on: { "click": _vm.addLocation } }, [_vm._v("Add Location")])]);
 };
 __vue__options__.staticRenderFns = [];
 if (module.hot) {
@@ -7726,11 +7719,11 @@ if (module.hot) {
         if (!module.hot.data) {
             hotAPI.createRecord("data-v-153b0ade", __vue__options__);
         } else {
-            hotAPI.reload("data-v-153b0ade", __vue__options__);
+            hotAPI.rerender("data-v-153b0ade", __vue__options__);
         }
     })();
 }
-},{"vueify/lib/insert-css":"node_modules/vueify/lib/insert-css.js","./TotalsDisplay.vue":"src/TotalsDisplay.vue","./MarketCardComponent.vue":"src/MarketCardComponent.vue","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"src/MarketCardComponent.vue":[function(require,module,exports) {
+},{"vueify/lib/insert-css":"node_modules/vueify/lib/insert-css.js","./TotalsDisplay.vue":"src/TotalsDisplay.vue","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"src/MarketCardComponent.vue":[function(require,module,exports) {
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("#Mmarket-card {\n  padding: 5px;\n  width:30%;\n  margin: 5px 5px 13px 10px;\n  float:left;\n  font-size: .8em;\n  box-shadow: 5px 5px 15px rgba(0, 0, 0, .2);\n}");(function () {
   'use strict';
 
@@ -7770,7 +7763,7 @@ if (module.hot) {
     if (!module.hot.data) {
       hotAPI.createRecord("data-v-cd6889a4", __vue__options__);
     } else {
-      hotAPI.rerender("data-v-cd6889a4", __vue__options__);
+      hotAPI.reload("data-v-cd6889a4", __vue__options__);
     }
   })();
 }
@@ -7933,7 +7926,7 @@ function Module(config) {
 module.bundle.Module = Module;
 
 if (!module.bundle.parent && typeof WebSocket !== 'undefined') {
-  var ws = new WebSocket('ws://localhost:51024/');
+  var ws = new WebSocket('ws://localhost:51903/');
   ws.onmessage = function(event) {
     var data = JSON.parse(event.data);
 
